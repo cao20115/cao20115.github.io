@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/img_64.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/img_64.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/img_32.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cao20115.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="动态规划（Dynamic Programming）        ——初见动态规划-背包DP动态规划其实是运筹学的一种最优化方法，是通过决策过程最优化的数学方法。动态规划的应用极其广泛，包括工程技术、经济、工业生产、军事以及自动化控制等领域，并在背包问题、生产经营问题、资金管理问题、资源分配问题、最短路径问题和复杂系统可靠性问题中取得了显著的效果。   ### 动态规划   动态规划（DP）不是某">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DP">
+<meta property="og:url" content="http://cao20115.github.io/OI/%E7%AE%97%E6%B3%95/DP.html">
+<meta property="og:site_name" content="cao20115">
+<meta property="og:description" content="动态规划（Dynamic Programming）        ——初见动态规划-背包DP动态规划其实是运筹学的一种最优化方法，是通过决策过程最优化的数学方法。动态规划的应用极其广泛，包括工程技术、经济、工业生产、军事以及自动化控制等领域，并在背包问题、生产经营问题、资金管理问题、资源分配问题、最短路径问题和复杂系统可靠性问题中取得了显著的效果。   ### 动态规划   动态规划（DP）不是某">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-26T14:18:55.000Z">
+<meta property="article:modified_time" content="2024-08-27T14:40:22.965Z">
+<meta property="article:author" content="草履虫同学">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://cao20115.github.io/OI/%E7%AE%97%E6%B3%95/DP">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://cao20115.github.io/OI/%E7%AE%97%E6%B3%95/DP.html","path":"OI/算法/DP.html","title":"DP"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>DP | cao20115
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">cao20115</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">--my own blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-oi"><a href="/OI/" rel="section"><i class="fa fa-code fa-fw"></i>OI</a></li><li class="menu-item menu-item-每月鸡汤"><a href="/tags/%E9%B8%A1%E6%B1%A4/index.html" rel="section"><i class="fa fa-heartbeat fa-fw"></i>每月鸡汤</a></li><li class="menu-item menu-item-关于我"><a href="/About-me/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap" rel="section"><i class="fa fa-map fa-fw"></i>站点地图</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">动态规划（Dynamic Programming）        ——初见</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">动态规划-背包DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">爬楼梯问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.2.</span> <span class="nav-text">凑零钱问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.3.</span> <span class="nav-text">理解什么是状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.4.</span> <span class="nav-text">「最优子结构性质」</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.5.</span> <span class="nav-text">「无后效性」</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.6.</span> <span class="nav-text">什么情况下我们能使用DP呢？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">关于DP的本质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text">DP为什么会快？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.2.</span> <span class="nav-text">DP的核心是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.3.</span> <span class="nav-text">DP总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">$-\mathfrak{TheEnd}-$</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="草履虫同学"
+      src="/images/img1.png">
+  <p class="site-author-name" itemprop="name">草履虫同学</p>
+  <div class="site-description" itemprop="description">今天又是精神状态良好的一天</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/" title="blog → &#x2F;" rel="noopener me"><i class="fas fa-blog fa-fw"></i>blog</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/cao20115" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cao20115" rel="noopener me" target="_blank"><i class="fa fa-laptop fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/1251905" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;1251905" rel="noopener me" target="_blank">Luogu</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">DP
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/OI/">OI</a></li>
+            <li><a href="/OI/%E7%AE%97%E6%B3%95/">算法</a></li>
+            <li>DP</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h1><span id="动态规划dynamic-programming-初见">动态规划（Dynamic Programming）        ——初见</span></h1><h2><span id="动态规划-背包dp">动态规划-背包DP</span></h2><font color="peru">动态规划</font>其实是运筹学的一种最优化方法，是通过决策过程最优化的数学方法。动态规划的应用极其广泛，包括工程技术、经济、工业生产、军事以及自动化控制等领域，并在<font color="peru">背包问题、生产经营问题、资金管理问题、资源分配问题、最短路径问题和复杂系统可靠性问题</font>中取得了显著的效果。
+
+
+### 动态规划
+
+
+动态规划（DP）不是某种具体算法，而是一种<font color="peru">思想</font>。
+
+
+> <font color="peru">核心</font>:把大问题转化为小问题，利用小问题的解推断出大问题的解。
+
+
+<font color="cobalt"> </font><font color="blue">Richard E. Bellman</font>
+
+
+<font color="purple">1957年出版《Dynamic Programming》这是该领域的第一本著作</font>
+
+
+<font color="peru">研究</font>多阶段决策过程（<font color="peru">multistep decision process</font>）的优化问题
+
+
+<font color="peru">提出</font>了著名的最优化原理（<font color="peru">principle of optimality</font>）把多阶段过程转化为一系列单阶段过程
+
+
+<font color="peru">利用</font>各阶段之间的关系，逐个求解
+
+
+<font color="peru">创立</font>了解决这类过程优化问题的新方法——<font color="peru">动态规划</font>
+
+
+<p><strong><font color="red">动态规划问题的一般形式就是求最值</font></strong></p>
+<font color="peru">动态规划</font>其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求**最长**递增子序列，**最小**编辑距离等。
+
+
+**DP核心是穷举**
+
+
+1. 穷举存在「重叠子问题」  `-> `      备忘录 / DP Table优化穷举
+2. 具备最优子结构                  `->`       正确的「状态转移方程」
+
+
+### 谈谈斐波那契数列
+
+**<font color="red">一、明白什么是重叠子问题</font>**
+
+
+<font color="peru">备注</font>：（斐波那契数列没有求最值，有虽说严格来说不是动态规划问题）P1720    B2064    P3986    P4000    P3938    P1306    P3752    P1962    P2626    P7325    P5775    UVA11582……
+
+
+*<font color="red">递归超时！！！</font>*==<font color="red">$\Theta\left(2 ^ {n}\right)$</font>==
+
+
+（递归算法的时间复杂度怎么计算？就是用子问题个数乘以解决一个子问题需要的时间。）
+
+
+
+**<font color="red">二、带备忘录的递归写法</font>**
+
+
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> a[<span class="number">10001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123; <span class="comment">// 未优化</span></span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">fib</span>(n - <span class="number">1</span>) + <span class="built_in">fib</span>(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib2</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123; <span class="comment">// 已优化</span></span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (a[n] != <span class="number">0</span>) <span class="keyword">return</span> a[n];</span><br><span class="line">    a[n] = <span class="built_in">fib2</span>(n - <span class="number">1</span>) + <span class="built_in">fib2</span>(n - <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> a[n];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>, <span class="built_in">fib2</span>(n));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<font color="red">$\Theta\left(n\right)$</font>
+
+
+<p><strong><font color="red"> 三、DP数组的迭代（递推）解法</font></strong></p>
+<p>如果将<font color="peru">「备忘录」</font>独立出来成为一张表通常叫做<font color="peru">DP table</font>在这张表上完成自底向上的推算岂不美哉？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (N == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= N; i++) &#123;</span><br><span class="line">        dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>啥叫「自底向上」？反过来，我们直接从最底下、最简单、问题规模最小、已知结果的<code>f(1)</code>和<code>f(2)</code> （base case）开始往上推，直到推到我们想要的答案<code>f(20)</code>。这就是我们「递推」的思路，这也是动态规划的一般都<font color="deepblue">脱离了递归</font>，而是由<font color="peru">循环迭代</font>完成计算的原因。</p>
+<script type="math/tex; mode=display">
+f\left ( {n} \right ) = \begin{cases}
+1  & \text{ if } n= 1,2\\
+f\left ( n-1 \right ) +f\left ( n-2 \right )   & \text{ if } n> 2
+\end{cases}</script><font color="red">为啥叫「状态转移方程」？</font>
+
+
+<p><em><font color="purple">其实就是为了听起来高端！！！</font></em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span> || n == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// base case</span></span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> dp1 = <span class="number">1</span>, dp2 = <span class="number">0</span>, dp;</span><br><span class="line">    <span class="comment">//  ^dp[i-1] ^dp[i-2]</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++ i) &#123;</span><br><span class="line">        <span class="comment">//dp[i] = dp[i - 1]+dp[i - 2]</span></span><br><span class="line">        dp = dp1 + dp2;</span><br><span class="line">        dp2 = dp1;</span><br><span class="line">        dp1 = dp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>把空间复杂度从$\Theta\left(n^2\right)$压缩到$\Theta\left(n\right)$</p>
+<h3><span id="爬楼梯问题">爬楼梯问题</span></h3><p>今有<font color="peru">n级台阶</font>。初始时站在<font color="peru">0</font>级，每次可以向上走<font color="peru">1</font>级或<font color="peru">2</font>级。问总共有多少种方案？</p>
+<p><em><font color="red">暴力模拟：指数阶复杂度</font></em></p>
+<p>如果以$f[x]$表示“从零级走到$x$级的方案数”，假设$f[1],f[2]\cdots f[n-1]$全部已知如何用这一信息推出$f[n]$？</p>
+<p>得到$f[n]$要么是从$n-1$级走上来的，要么是从$n-2$级来的。依据加法原理</p>
+<script type="math/tex; mode=display">
+f[n] = f[n - 1] + f[n - 2]</script><h3><span id="凑零钱问题">凑零钱问题</span></h3><p>今天你手上有无限的面值为$1,5,11$元的硬币。给定$n$，问：至少用多少枚硬币，可以恰好好凑出$n$元？</p>
+<blockquote>
+<p>依据生活经验，我们可以采纳这种策略：<br>先尽量用11元的，然后尽量用5元的……以此类推。</p>
+</blockquote>
+<font color="red">贪心？***NO！！！***</font>
+
+
+<p>如何避免贪心的<font color="peru">鼠目寸光</font>？</p>
+<p>暴力美学？<font color="purple">复杂度太高</font>了。</p>
+<h3><span id="理解什么是状态">理解什么是状态</span></h3><p>我们用<em>“大事化小，小事化了”</em>的思想，解决了上楼梯问题和硬币问题。大事儿能转化成小事，是因为大事和小事都有一样的形式。</p>
+<p>只有<strong><em>大问题</em></strong>和小问题拥有<strong>相同的形式</strong>，才能考虑大事化小。如果满足这个要求，那么我们遇到的每一个问题，都可以很简洁的表达。我们把可能遇到的每种<strong>「局面」</strong> <strong><em>称为状态</em></strong>。</p>
+<font color="deepblue">设计完状态之后，只要能**利用小状态的解求出大状态的解**</font>
+
+
+<h3><span id="最优子结构性质">「最优子结构性质」</span></h3><p>大问题的最优解可以由小问题的最优解推出，这个性质叫做「最优子结构性质」。</p>
+<h3><span id="无后效性">「无后效性」</span></h3><p>「未来与过去无关」，这就是无后效性。</p>
+<p>（严格定义：如果给定某一阶段的状态，则在这一阶段以后的过程发展都不受这一阶段以前各状态的影响。）</p>
+<h3><span id="什么情况下我们能使用dp呢">什么情况下我们能使用DP呢？</span></h3><p>我们能将大问题拆成几个小问题且满足</p>
+<ul>
+<li>[x] 无后效性</li>
+<li>[x] 最优子结构性质</li>
+</ul>
+<h2><span id="关于dp的本质">关于DP的本质</span></h2><ol>
+<li>DP为什么会快？</li>
+<li>DP的核心是什么？</li>
+<li>关于终极的思考：我是谁？我从哪里来？我要到哪里去？？？</li>
+</ol>
+<h3><span id="dp为什么会快"><font color="red">DP为什么会快？</font></span></h3><font color="purple">DP自带剪枝</font>
+
+
+<p>无论DP还是暴力，我们的算法都是在可能解空间，内寻找最优解。</p>
+<blockquote>
+<p>暴力做法是枚举所有的可能解，这是最大的可能解空间。<br>DP是枚举有希望成为答案的解。这个空间比暴力的小得多。</p>
+</blockquote>
+<p>DP舍弃了一大堆不可能成为最优解的答案。</p>
+<h3><span id="dp的核心是什么"><font color="red">DP的核心是什么？</font></span></h3><p>DP的核心思想:</p>
+<p><strong>尽量缩小可能解的空间</strong></p>
+<p>在暴力算法中，可能解读空间往往是指数级的大小；如果我们采用DP，那么有可能把解空间大小降到多项式级。</p>
+<p>将一个大问题转化为几个小问题；</p>
+<p>求解小问题；</p>
+<p>推出大问题的解。</p>
+<h3><span id="dp总结">DP总结</span></h3><ol>
+<li>计算机解决问题其实没有任何奇技淫巧，他唯一的解决办法就是穷举，穷举所有可能性。算法设计无非就是先思考如何穷举，然后再追求如何聪明的穷举。</li>
+<li>列出状态转移方程，就是在解决如何穷举的问题。之所以说它难，一是因为很多穷举需要递归实现，二是因为有的问题本身的解空间复杂，不那么容易穷举完整。</li>
+<li>备忘录、DP table 就是在追求如何聪明的穷举。用空间换时间的思路，是降低时间复杂度的不二法门。</li>
+<li>DP设计三板斧：我是谁？我从哪里来？我要到哪里去？</li>
+</ol>
+<h1><span id="-mathfraktheend-">$-\mathfrak{TheEnd}-$</span></h1>
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/OI/">OI</a></li>
+            <li><a href="/OI/%E7%AE%97%E6%B3%95/">算法</a></li>
+            <li>DP</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">草履虫同学</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">17k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:03</span>
+  </span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>-->
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("8/24/2024 12:00:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = " 运行了 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分钟 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","per_page":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
