@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cao20115.github.io/lib/pace/README.html</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://cao20115.github.io/%E7%B2%BE%E7%A5%9E%E7%8A%B6%E6%80%81%E8%89%AF%E5%A5%BD/4.html</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://cao20115.github.io/%E7%B2%BE%E7%A5%9E%E7%8A%B6%E6%80%81%E8%89%AF%E5%A5%BD/5.html</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://cao20115.github.io/%E7%B2%BE%E7%A5%9E%E7%8A%B6%E6%80%81%E8%89%AF%E5%A5%BD/index.html</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://cao20115.github.io/%E7%B2%BE%E7%A5%9E%E7%8A%B6%E6%80%81%E8%89%AF%E5%A5%BD/3.html</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://cao20115.github.io/OI/%E7%AE%97%E6%B3%95/DP.html</loc>
     
     <lastmod>2024-08-27</lastmod>
@@ -12,15 +57,6 @@
   
   <url>
     <loc>http://cao20115.github.io/About-me/index.html</loc>
-    
-    <lastmod>2024-08-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://cao20115.github.io/%E7%B2%BE%E7%A5%9E%E7%8A%B6%E6%80%81%E8%89%AF%E5%A5%BD/index.html</loc>
     
     <lastmod>2024-08-27</lastmod>
     
@@ -238,7 +274,7 @@
 
   <url>
     <loc>http://cao20115.github.io/</loc>
-    <lastmod>2024-08-27</lastmod>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -246,28 +282,28 @@
   
   <url>
     <loc>http://cao20115.github.io/tags/Linux/</loc>
-    <lastmod>2024-08-27</lastmod>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cao20115.github.io/tags/OI/</loc>
-    <lastmod>2024-08-27</lastmod>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cao20115.github.io/tags/Soup/</loc>
-    <lastmod>2024-08-27</lastmod>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cao20115.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2024-08-27</lastmod>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
