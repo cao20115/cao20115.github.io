@@ -1,334 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2024年8月鸡汤</title>
-    <url>/2024/08/24/2024%E5%B9%B48%E6%9C%88%E9%B8%A1%E6%B1%A4/</url>
-    <content><![CDATA[<h1><span id="2024年8月鸡汤">2024年8月鸡汤</span></h1><blockquote>
-<p>每天一碗鲜鸡汤有益于身体健康</p>
-<p>​        ——鲁迅</p>
-</blockquote>
-<p>（鲁迅：我没说过）</p>
-<p>$1^{365}=1$</p>
-<p>$1.01^{365}=37.8$</p>
-<p>$0.99^{365}=0.03$</p>
-]]></content>
-      <tags>
-        <tag>Soup</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux：Bash的使用</title>
-    <url>/2024/08/24/Linux%EF%BC%9ABash%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>1.新建</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> 文件夹名 <span class="comment"># 新建文件夹</span></span><br><span class="line"><span class="built_in">touch</span> 文件名 <span class="comment"># 新建文件</span></span><br></pre></td></tr></table></figure>
-<p>2.删除</p>
-<span id="more"></span>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> 文件名 <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -r 文件夹名 <span class="comment"># 删除文件夹</span></span><br></pre></td></tr></table></figure>
-<p>3.切换目录<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 目录名 <span class="comment"># 进入子目录</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment"># 回到父目录</span></span><br><span class="line"><span class="built_in">cd</span> 路径 <span class="comment"># 去往路径</span></span><br></pre></td></tr></table></figure></p>
-<p>4.查看<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> 文件名 <span class="comment"># 将文件输出到命令行</span></span><br><span class="line">vim 文件名 <span class="comment"># 在vim中打开</span></span><br></pre></td></tr></table></figure></p>
-<p>5.sudo<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> su <span class="comment"># 进入root用户</span></span><br><span class="line"><span class="built_in">sudo</span> 命令 <span class="comment"># 以管理员权限执行命令</span></span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-        <tag>OI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构基础</title>
-    <url>/2024/08/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2><span id="什么是数据结构">什么是数据结构？</span></h2><ul>
-<li>数据结构（DS，Data Structure）</li>
-<li>高效的组织数据的一种形式。任何能够提高我们使用数据效率的我们都可以称之为数据结构。</li>
-<li>数据结构一般分为具体的和抽象的，一般而言抽象程度越高的数据结构，越能被称为“高级数据结构”</li>
-<li>化学告诉我们，结构决定功能。数据结构的不同组织形式决定了其具有各自的功能。数据结构是一个有力的工具，各有特点，我们应该根据需要选用合适的数据结构。</li>
-</ul>
-<span id="more"></span>
-<h2><span id="数组">数组</span></h2><ul>
-<li>在计算机科学中，数组数据结构，简称数组，是由相同类型的元素的集合所组成的数据结构，分配一块连续的内存来存储。利用元素的索引可以计算出该元素对应的存储地址。</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Index</th>
-<th style="text-align:center">Element</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">16</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">32</td>
-</tr>
-<tr>
-<td style="text-align:center">$\vdots$</td>
-<td style="text-align:center">$\vdots$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3><span id="数组如何寻址">数组如何寻址</span></h3><ol>
-<li>取出数组名，转换为指针</li>
-<li>一步一步展开，直到找到元素为止</li>
-</ol>
-<p>例如：<code>int a[2][3][4][5]</code>查询<code>a[0][1][2][3][4]</code>（假设<code>a</code>指向的第一个内存是<code>x</code>）<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">x + (<span class="number">0</span> * <span class="number">3</span> * <span class="number">4</span> * <span class="number">5</span> + <span class="number">1</span> * <span class="number">4</span> * <span class="number">5</span> + <span class="number">2</span> * <span class="number">5</span> + <span class="number">3</span>) * <span class="built_in">sizeof</span>(<span class="type">int</span>)</span><br><span class="line">x + (((<span class="number">0</span> * <span class="number">3</span> + <span class="number">1</span>) * <span class="number">4</span> + <span class="number">2</span>) * <span class="number">5</span> + <span class="number">3</span>) * <span class="built_in">sizeof</span>(<span class="type">int</span>)</span><br></pre></td></tr></table></figure></p>
-<p>所以这也就解释了高维数组寻址优化的原理：减少乘法次数。</p>
-<p>同时我们也可以发现，<code>a[5]</code>和<code>5[a]</code>一样，但这么做除了会让你的代码变得更加不可读之外没有任何好处。</p>
-<h2><span id="stl中的可变长度数组向量">STL中的可变长度数组（向量）</span></h2><ul>
-<li>名称：<code>vector</code></li>
-<li>定义：<code>vector &lt;type&gt; name;</code>如：<code>vector &lt;int&gt; a;</code></li>
-<li><code>a.push_back(元素)</code></li>
-<li><code>a.pop_back(元素)</code></li>
-<li>访问：<code>name[index]</code></li>
-</ul>
-<h2><span id="链表">链表</span></h2><ul>
-<li>链表也是线性表的一种</li>
-</ul>
-<p>链表也是线性表的一种，但它不按照线性的顺序存储数据，而是存放到下一个元素的指针。</p>
-<p>可以实现$\Theta\left(1\right)$的插入，但是不支持随机查询。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">链表</td>
-<td style="text-align:center">插入删除迅速，不支持随机下标访问</td>
-</tr>
-<tr>
-<td style="text-align:center">数组</td>
-<td style="text-align:center">插入删除操作复杂度高，但是可以随机下标访问</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3><span id="怎么写一个链表">怎么写一个链表</span></h3><ul>
-<li>像我这样菜的人一般都是数组模拟链表，好写好调。</li>
-<li>通常用两个数组<code>value</code>和<code>next</code>表示链表的节点其中<code>value[]</code>用来储存节点中储存的数<code>next[]</code>表示紧挨着这个节点的下一个节点是什么</li>
-<li>变量cnt，没有实际意义，仅来创建节点</li>
-<li>变量head，表示整个链表中第一个结点哪一个</li>
-<li>插入的时候，首先要创建节点，让<code>cnt</code>加<code>1</code>，<code>val[cnt]</code>和<code>nxt[cnt]</code>就表示新建的节点给<code>val[cnt]</code>赋值为想要插入的数</li>
-<li><p>然后找到要插入的位置，假设要在结点<code>x</code>和节点<code>y</code>的中间插入，则依次让<code>nxt[x] = cnt</code>，<code>nxt[cnt] = y</code></p>
-</li>
-<li><p>如果要删除某个节点，找到这个节点以及上一个节点的位置。假设这个节点为<code>x</code>，上一个节点为<code>y</code>，那只需要让<code>nxt[y] = nxt[x]</code>即可</p>
-</li>
-<li>如何寻找要找的结点？</li>
-<li>从头开始一个一个往后找</li>
-<li>因此某个节点的上一个节点也可以在找这个节点的过程中找到</li>
-<li>如果把头结点删了记得把头更新为头的下一个</li>
-</ul>
-<h3><span id="链表的简单实现">链表的简单实现</span></h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    Node *pre, *nxt;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ins</span><span class="params">(Node *x, Node *y)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// x -&gt; y</span></span><br><span class="line">    <span class="keyword">if</span> (x-&gt;nxt != <span class="literal">NULL</span>) y-&gt;nxt = x-&gt;nxt, y-&gt;nxt-&gt;pre = y;</span><br><span class="line">    x-&gt;nxt = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">(Node *x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x-&gt;pre != <span class="literal">NULL</span>) x-&gt;pre-&gt;nxt = nxt;</span><br><span class="line">    <span class="keyword">if</span> (x-&gt;nxt != <span class="literal">NULL</span>) x-&gt;nxt-&gt;pre = pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="链表的一些常见应用">链表的一些常见应用</span></h3><ul>
-<li><p>存图（也被称作链式向前型）</p>
-</li>
-<li><p>块状链表</p>
-<p>数组：$\Theta\left(1\right)$查询，$\Theta\left(n\right)$插入；</p>
-<p>链表：$\Theta\left(n\right)$查询，$\Theta\left(1\right)$插入；</p>
-<p><img src="images/kuaizhuanglianbiao-172191081273312.png" alt="./images/kuaizhuanglianbiao.png"></p>
-</li>
-</ul>
-<p>不难发现块状链表就是一个链表，每个节点指向一个数组。 我们把原来长度为 n 的数组分为 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="\sqrt{n}"> 个节点，每个节点对应的数组大小为 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="\sqrt{n}">。 所以我们这么定义结构体，代码见下。 其中 <code>sqn</code> 表示 <code>sqrt(n)</code> 即 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="\sqrt{n}">，<code>pb</code> 表示 <code>push_back</code>，即在这个 <code>node</code> 中加入一个元素。</p>
-<h2><span id="栈">栈</span></h2><h3><span id="感性理解一下栈">感性理解一下栈</span></h3><ul>
-<li>薯片桶大家应该见过；</li>
-<li>只能从开口一端的最上面去薯片，要把薯片放进去也只能在开口一端的最上面；</li>
-<li><img src="images/stack.svg" alt="img"></li>
-<li>这就是一个栈；</li>
-<li>换而言之，栈是一种特殊的线性表，只能在一端插入/删除</li>
-</ul>
-<h3><span id="这样的一些实现概念">这样的一些实现概念</span></h3><ul>
-<li>最上面的元素被称为<font color="red">栈顶</font></li>
-<li>把一个元素放到栈的最上面称为<font color="red">压入（push）</font></li>
-<li>把栈顶从栈中除掉被称为<font color="red">弹出（pop）</font></li>
-<li>被弹出栈的数据总是栈中所有数据中最后进来的那个这种储存方式叫做<font color="red">先进后出</font></li>
-</ul>
-<h3><span id="如何实现栈">如何实现栈</span></h3><ul>
-<li><p>一般用数组模拟。</p>
-</li>
-<li><p>```cpp</p>
-<h1><span id="include">include <cstdio></cstdio></span></h1><p>struct stack{</p>
-<pre><code>int a[100010];
-int tot;
-void init()&#123;
-    tot = 0;
-&#125;
-void push(int x) &#123;
-    a[++tot] = x;
-&#125;
-void pop() &#123;
-    --tot;
-&#125;
-int size() &#123;
-    return tot;
-&#125;
-int top() &#123;
-    return a[top];
-&#125;
-</code></pre><p>};<br>int main(){</p>
-<pre><code>return 0;
-</code></pre><p>}</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 栈的用处</span><br><span class="line"></span><br><span class="line">- 实现深度优先搜索</span><br><span class="line">- 单调栈优化DP等</span><br><span class="line">- 有一些经典算法是用栈的</span><br><span class="line"></span><br><span class="line">## 队列</span><br><span class="line"></span><br><span class="line">- 队列这名字够形象了就如同生活中的排队</span><br><span class="line">- 队列支持两种操作</span><br><span class="line">  - &lt;font color = &quot;red&quot;&gt;入队&lt;/font&gt;：在队列最后端加入一个数</span><br><span class="line">  - &lt;font color = &quot;red&quot;&gt;出队&lt;/font&gt;：把队列最前端的树移出队列</span><br><span class="line">- ![img](images/queue.svg)</span><br><span class="line">- 队列最前端叫做队头，最后端叫做队尾</span><br><span class="line">- 被移除队列的树总是队列中最早进来的那个，这种存储的方式叫做&lt;font color = &quot;red&quot;&gt;先进先出&lt;/font&gt;。</span><br><span class="line"></span><br><span class="line">### 队列的一些基本概念</span><br><span class="line"></span><br><span class="line">- 数组`q[]`，这是队列的本体</span><br><span class="line">- `l`，`r`，分别表示队头的下标和队尾的下标</span><br><span class="line">- 入队和栈一样，若要加入数`x`，让`r`加`1`，然后给赋值为`x`即可</span><br><span class="line">- 出队时只需让`l`加`1`</span><br><span class="line">- 通过把队列后边界前移来达到移除队尾的目的</span><br><span class="line"></span><br><span class="line">### 实现</span><br><span class="line"></span><br><span class="line">```cpp</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">struct queue&#123;</span><br><span class="line">	int q[100010];</span><br><span class="line">	int l, r;</span><br><span class="line">	void init()&#123;</span><br><span class="line">		l = 0;</span><br><span class="line">         r = 0;</span><br><span class="line">	&#125;</span><br><span class="line">	void push(int x) &#123;</span><br><span class="line">		/*</span><br><span class="line">		if (r == 1000000) r = 1;</span><br><span class="line">		else ++r;</span><br><span class="line">		*/</span><br><span class="line">        q[r] = x</span><br><span class="line">	&#125;</span><br><span class="line">	void pop() &#123;</span><br><span class="line">        /*</span><br><span class="line">		if (l == 1000000) l = 1;</span><br><span class="line">		else ++l;</span><br><span class="line">		*/</span><br><span class="line">         ++l;</span><br><span class="line">	&#125;</span><br><span class="line">	int size() &#123;</span><br><span class="line">        if (l &lt; r) return r - l;</span><br><span class="line">        return l - r + 1;</span><br><span class="line">	&#125;</span><br><span class="line">	int front() &#123;</span><br><span class="line">		return q[l];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3><span id="循环队列">循环队列</span></h3><ul>
-<li>如果每次入队出队都往后增的话，就会出现队列“假溢”的情况</li>
-<li>我们可以尝试着把队列的最后面，接到最前面称为循环队列。</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">queue</span>&#123;</span><br><span class="line">	<span class="type">int</span> q[<span class="number">100010</span>];</span><br><span class="line">	<span class="type">int</span> l, r;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">		l = <span class="number">0</span>;</span><br><span class="line">         r = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (r == <span class="number">1000000</span>) r = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> ++r;</span><br><span class="line">        q[r] = x</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">void</span> <span class="built_in">pop</span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> (l == <span class="number">1000000</span>) l = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> ++l;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) <span class="keyword">return</span> r - l;</span><br><span class="line">        <span class="keyword">return</span> l - r + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> q[l];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="单调队列">单调队列</span></h3><ul>
-<li><p>看下面一个例题：</p>
-<p>给定一个长度为$n$的序列，求所有区间长度为$m$的区间的最大值和最小值。</p>
-<p>$n, m \le 5\times 10^6$</p>
-</li>
-<li><p>这道题有啥做法？</p>
-<ol>
-<li>$\Theta \left(n \log n \right)$的线段树；</li>
-<li>$\Theta \left(n \log n \right)$的带删除优先队列（堆、左偏树、 STL…）；</li>
-<li>$\Theta \left(n\right)$-$\Theta \left(1\right)$RMQ代替线段树；</li>
-<li>$\Theta \left(n \right)$的滑动窗口；</li>
-</ol>
-</li>
-<li><p>在队列中维护一个单调性，换而言之，让这个队列保持里面的元素拥有单调递增/单调递减的属性；</p>
-</li>
-<li><p>也就是说，维护这几个元素的最大值/最小值即可；</p>
-</li>
-<li><p>考虑到每个元素最多被进出对一次，因此这是一个$\Theta \left(n \right)$的算法；</p>
-</li>
-</ul>
-<h2><span id="前缀和">前缀和</span></h2><ul>
-<li><p>给定一个序列；</p>
-</li>
-<li><p>定义$p_i$为前$i$个数的和；</p>
-</li>
-<li><p>$p<em>i = p</em>{i - 1} + a_i$</p>
-</li>
-<li><p>最简单的应用：</p>
-<p>查询区间$\left[l,r\right]$的和；</p>
-<p>$ans = p<em>r - p</em>{l - 1}$；</p>
-</li>
-<li><p>前缀和还可以用来拓展为有逆运算的运算；</p>
-</li>
-</ul>
-<h2><span id="并查集">并查集</span></h2><ul>
-<li>并查集是一类问题的总称，不过在使用中大部分人都会使用树形的结构实现并查集；</li>
-<li>并查集的基本问题：用于处理一些不相交集合的合并及查询问题；</li>
-<li>有两个基本操作：<ul>
-<li>Find：确定元素属于哪一个子集，它可以被用来确定两个元素是否属于同一个子集；</li>
-<li>Union：将两个子集合并成同一个集合；</li>
-</ul>
-</li>
-<li>先考虑如何查询一个元素属于哪个集合：<ul>
-<li>我们假设每一个集合都是一个树的形态，那么这棵树的树根就是这个集合的代表元；</li>
-<li>一路往上爬找到树根即可；</li>
-<li><img src="images/disjoint-set-find.svg" alt="img"></li>
-</ul>
-</li>
-<li><p>在考虑如何合并两个集合；</p>
-<ul>
-<li>把一个集合的树根挂到另一个集合的根节点底下当儿子就好了；</li>
-<li><img src="images/disjoint-set-merge.svg" alt="img"></li>
-</ul>
-</li>
-<li><p>我们发现这样做可能效率并不是太高，因为在最坏情况下查询可能要趴完所有节点，复杂度是单次$\Theta\left(n\right)$的；</p>
-</li>
-<li><p>如果这个数值有两层那么查询的效率必然极高；</p>
-</li>
-<li><p>这就是并查集的第一个优化：路径压缩；</p>
-<ul>
-<li><p><img src="images/disjoint-set-compress.svg" alt="img"></p>
-</li>
-<li><p>板子：</p>
-<blockquote>
-<h4><span id="模板并查集">【模板】并查集</span></h4><h5><span id="题目描述">题目描述</span></h5><p>如题，现在有一个并查集，你需要完成合并和查询操作。</p>
-<h5><span id="输入格式">输入格式</span></h5><p>第一行包含两个整数 $N,M$ ,表示共有 $N$ 个元素和 $M$ 个操作。</p>
-<p>接下来 $M$ 行，每行包含三个整数 $Z_i,X_i,Y_i$ 。</p>
-<p>当 $Z_i=1$ 时，将 $X_i$ 与 $Y_i$ 所在的集合合并。</p>
-<p>当 $Z_i=2$ 时，输出 $X_i$ 与 $Y_i$ 是否在同一集合内，是的输出<br><code>Y</code> ；否则输出 <code>N</code> 。</p>
-<h5><span id="输出格式">输出格式</span></h5><p>对于每一个 $Z_i=2$ 的操作，都有一行输出，每行包含一个大写字母，为 <code>Y</code> 或者 <code>N</code> 。</p>
-<h5><span id="样例-1">样例 #1</span></h5><h6><span id="样例输入-1">样例输入 #1</span></h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 7</span><br><span class="line">2 1 2</span><br><span class="line">1 1 2</span><br><span class="line">2 1 2</span><br><span class="line">1 3 4</span><br><span class="line">2 1 4</span><br><span class="line">1 2 3</span><br><span class="line">2 1 4</span><br></pre></td></tr></table></figure>
-<h6><span id="样例输出-1">样例输出 #1</span></h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">N</span><br><span class="line">Y</span><br><span class="line">N</span><br><span class="line">Y</span><br></pre></td></tr></table></figure>
-<h5><span id="提示">提示</span></h5><p>对于 $30\%$ 的数据，$N \le 10$，$M \le 20$。</p>
-<p>对于 $70\%$ 的数据，$N \le 100$，$M \le 10^3$。</p>
-<p>对于 $100\%$ 的数据，$1\le N \le 10^4$，$1\le M \le 2\times 10^5$，$1 \le X_i, Y_i \le N$，$Z_i \in { 1, 2 }$。</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> fa[N], n, m;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span> <span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[x] != x) &#123;</span><br><span class="line">		fa[x] = <span class="built_in">find</span>(fa[x]);</span><br><span class="line">		<span class="keyword">return</span> fa[x];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> xx = <span class="built_in">find</span>(x), yy = <span class="built_in">find</span>(y);</span><br><span class="line">	fa[yy] = xx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">	<span class="type">char</span> ch;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		ch = <span class="built_in">getchar</span>();</span><br><span class="line">		<span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">	&#125; <span class="keyword">while</span> (ch &lt; <span class="string">&#x27;0&#x27;</span> || ch &gt; <span class="string">&#x27;9&#x27;</span>);</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		x = x * <span class="number">10</span> + ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		ch = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;<span class="keyword">while</span> (ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>);</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	n = <span class="built_in">read</span>();</span><br><span class="line">	m = <span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) fa[i] = i;</span><br><span class="line">	<span class="keyword">while</span> (m--) &#123;</span><br><span class="line">		<span class="type">int</span> opt = <span class="built_in">read</span>();</span><br><span class="line">		<span class="type">int</span> x = <span class="built_in">read</span>();</span><br><span class="line">		<span class="type">int</span> y = <span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">if</span> (opt == <span class="number">1</span>) <span class="built_in">merge</span>(x, y);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="type">int</span> xx = <span class="built_in">find</span>(x);</span><br><span class="line">			<span class="type">int</span> yy = <span class="built_in">find</span>(y);</span><br><span class="line">			<span class="keyword">if</span> (xx == yy) <span class="built_in">printf</span> (<span class="string">&quot;y&quot;</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;N&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>第二种合并被称为启发式合并，启发式合并的思想在数据结构中有广泛的应用；</p>
-<ul>
-<li>我们发现，如果我们每次把高的树并到矮的树上，那么会造成同样的效率浪费；</li>
-<li>所以我们同时记录每个集合的树高，将矮的并到高的去就好了；</li>
-<li>当然有一个更方便的做法，是记录每个集合的大小每次将小的集合变到大的集合，复杂度同样；</li>
-</ul>
-</li>
-</ul>
-<h3><span id="并查集的时间复杂度">并查集的时间复杂度</span></h3><p>使用路径压缩：$\Theta\left(\log n\right)$</p>
-<h2><span id="优先队列">优先队列</span></h2><ul>
-<li><p>什么是优先队列呢？</p>
-</li>
-<li><p>就是在弹出的时候，不是按照进入时间，而是按照另一种给定的优先级弹出；</p>
-</li>
-<li><p>其实可以认为普通队列是规定了时间最小为优先级的优先队列；</p>
-</li>
-<li><p>有很多种实现优先队列的方式，最常见的就是堆；</p>
-</li>
-<li><p>```cpp</p>
-<h1><span id="include">include <cstdio></cstdio></span></h1><h1><span id="include">include <queue></queue></span></h1><p>using namespace std;<br>priority_queue<type> name;</type></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- 优先队列初始默认是权值大优先级高；</span><br><span class="line"></span><br><span class="line">- 声明权值小优先级高：</span><br><span class="line"></span><br><span class="line">  ```cpp</span><br><span class="line">  priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt; q;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3><span id="一个简单的小例题">一个简单的小例题</span></h3><ul>
-<li><p>合并果子；</p>
-<blockquote>
-<h4><span id="noip2004-提高组-合并果子-usaco06nov-fence-repair-g">[NOIP2004 提高组] 合并果子 / [USACO06NOV] Fence Repair G</span></h4><h5><span id="题目描述">题目描述</span></h5><p>在一个果园里，多多已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。多多决定把所有的果子合成一堆。</p>
-<p>每一次合并，多多可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。可以看出，所有的果子经过 $n-1$ 次合并之后， 就只剩下一堆了。多多在合并果子时总共消耗的体力等于每次合并所耗体力之和。</p>
-<p>因为还要花大力气把这些果子搬回家，所以多多在合并果子时要尽可能地节省体力。假定每个果子重量都为 $1$ ，并且已知果子的种类 数和每种果子的数目，你的任务是设计出合并的次序方案，使多多耗费的体力最少，并输出这个最小的体力耗费值。</p>
-<p>例如有 $3$ 种果子，数目依次为 $1$ ， $2$ ， $9$ 。可以先将 $1$ 、 $2$ 堆合并，新堆数目为 $3$ ，耗费体力为 $3$ 。接着，将新堆与原先的第三堆合并，又得到新的堆，数目为 $12$ ，耗费体力为 $12$ 。所以多多总共耗费体力 $=3+12=15$ 。可以证明 $15$ 为最小的体力耗费值。</p>
-<h5><span id="输入格式">输入格式</span></h5><p>共两行。<br>第一行是一个整数 $n(1\leq n\leq 10000)$ ，表示果子的种类数。  </p>
-<p>第二行包含 $n$ 个整数，用空格分隔，第 $i$ 个整数 $a_i(1\leq a_i\leq 20000)$ 是第 $i$ 种果子的数目。</p>
-<h5><span id="输出格式">输出格式</span></h5><p>一个整数，也就是最小的体力耗费值。输入数据保证这个值小于 $2^{31}$ 。</p>
-<h5><span id="样例-1">样例 #1</span></h5><h6><span id="样例输入-1">样例输入 #1</span></h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3 </span><br><span class="line">1 2 9</span><br></pre></td></tr></table></figure>
-<h5><span id="样例输出-1">样例输出 #1</span></h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure>
-<h6><span id="提示">提示</span></h6><p>对于 $30\%$ 的数据，保证有 $n \le 1000$：</p>
-<p>对于 $50\%$ 的数据，保证有 $n \le 5000$；</p>
-<p>对于全部的数据，保证有 $n \le 10000$。</p>
-</blockquote>
-</li>
-<li><p>每次选择当前最小的两队合并起来就好了；</p>
-<ul>
-<li>code</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, x, ans;</span><br><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt; &gt;q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">        q.<span class="built_in">push</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>() &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="type">int</span> a = q.<span class="built_in">top</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> b = q.<span class="built_in">top</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        ans += a + b;</span><br><span class="line">        q.<span class="built_in">push</span>(a + b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>OI</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Practice</title>
     <url>/2024/08/24/Practice/</url>
     <content><![CDATA[<h1><span id="刷题">刷题</span></h1><h2><span id="p1093-noip2007-普及组-奖学金">P1093 [NOIP2007 普及组] 奖学金</span></h2><h3><span id="题目背景">题目背景</span></h3><p>NOIP2007 普及组 T1</p>
@@ -975,6 +647,334 @@ int top() &#123;
 <h1><span id="mathfrak-theend-">$\mathfrak{-TheEnd-}$</span></h1>]]></content>
       <tags>
         <tag>OI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux：Bash的使用</title>
+    <url>/2024/08/24/Linux%EF%BC%9ABash%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>1.新建</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> 文件夹名 <span class="comment"># 新建文件夹</span></span><br><span class="line"><span class="built_in">touch</span> 文件名 <span class="comment"># 新建文件</span></span><br></pre></td></tr></table></figure>
+<p>2.删除</p>
+<span id="more"></span>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> 文件名 <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -r 文件夹名 <span class="comment"># 删除文件夹</span></span><br></pre></td></tr></table></figure>
+<p>3.切换目录<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 目录名 <span class="comment"># 进入子目录</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment"># 回到父目录</span></span><br><span class="line"><span class="built_in">cd</span> 路径 <span class="comment"># 去往路径</span></span><br></pre></td></tr></table></figure></p>
+<p>4.查看<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> 文件名 <span class="comment"># 将文件输出到命令行</span></span><br><span class="line">vim 文件名 <span class="comment"># 在vim中打开</span></span><br></pre></td></tr></table></figure></p>
+<p>5.sudo<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> su <span class="comment"># 进入root用户</span></span><br><span class="line"><span class="built_in">sudo</span> 命令 <span class="comment"># 以管理员权限执行命令</span></span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构基础</title>
+    <url>/2024/08/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2><span id="什么是数据结构">什么是数据结构？</span></h2><ul>
+<li>数据结构（DS，Data Structure）</li>
+<li>高效的组织数据的一种形式。任何能够提高我们使用数据效率的我们都可以称之为数据结构。</li>
+<li>数据结构一般分为具体的和抽象的，一般而言抽象程度越高的数据结构，越能被称为“高级数据结构”</li>
+<li>化学告诉我们，结构决定功能。数据结构的不同组织形式决定了其具有各自的功能。数据结构是一个有力的工具，各有特点，我们应该根据需要选用合适的数据结构。</li>
+</ul>
+<span id="more"></span>
+<h2><span id="数组">数组</span></h2><ul>
+<li>在计算机科学中，数组数据结构，简称数组，是由相同类型的元素的集合所组成的数据结构，分配一块连续的内存来存储。利用元素的索引可以计算出该元素对应的存储地址。</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Index</th>
+<th style="text-align:center">Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">16</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">32</td>
+</tr>
+<tr>
+<td style="text-align:center">$\vdots$</td>
+<td style="text-align:center">$\vdots$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><span id="数组如何寻址">数组如何寻址</span></h3><ol>
+<li>取出数组名，转换为指针</li>
+<li>一步一步展开，直到找到元素为止</li>
+</ol>
+<p>例如：<code>int a[2][3][4][5]</code>查询<code>a[0][1][2][3][4]</code>（假设<code>a</code>指向的第一个内存是<code>x</code>）<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">x + (<span class="number">0</span> * <span class="number">3</span> * <span class="number">4</span> * <span class="number">5</span> + <span class="number">1</span> * <span class="number">4</span> * <span class="number">5</span> + <span class="number">2</span> * <span class="number">5</span> + <span class="number">3</span>) * <span class="built_in">sizeof</span>(<span class="type">int</span>)</span><br><span class="line">x + (((<span class="number">0</span> * <span class="number">3</span> + <span class="number">1</span>) * <span class="number">4</span> + <span class="number">2</span>) * <span class="number">5</span> + <span class="number">3</span>) * <span class="built_in">sizeof</span>(<span class="type">int</span>)</span><br></pre></td></tr></table></figure></p>
+<p>所以这也就解释了高维数组寻址优化的原理：减少乘法次数。</p>
+<p>同时我们也可以发现，<code>a[5]</code>和<code>5[a]</code>一样，但这么做除了会让你的代码变得更加不可读之外没有任何好处。</p>
+<h2><span id="stl中的可变长度数组向量">STL中的可变长度数组（向量）</span></h2><ul>
+<li>名称：<code>vector</code></li>
+<li>定义：<code>vector &lt;type&gt; name;</code>如：<code>vector &lt;int&gt; a;</code></li>
+<li><code>a.push_back(元素)</code></li>
+<li><code>a.pop_back(元素)</code></li>
+<li>访问：<code>name[index]</code></li>
+</ul>
+<h2><span id="链表">链表</span></h2><ul>
+<li>链表也是线性表的一种</li>
+</ul>
+<p>链表也是线性表的一种，但它不按照线性的顺序存储数据，而是存放到下一个元素的指针。</p>
+<p>可以实现$\Theta\left(1\right)$的插入，但是不支持随机查询。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">链表</td>
+<td style="text-align:center">插入删除迅速，不支持随机下标访问</td>
+</tr>
+<tr>
+<td style="text-align:center">数组</td>
+<td style="text-align:center">插入删除操作复杂度高，但是可以随机下标访问</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><span id="怎么写一个链表">怎么写一个链表</span></h3><ul>
+<li>像我这样菜的人一般都是数组模拟链表，好写好调。</li>
+<li>通常用两个数组<code>value</code>和<code>next</code>表示链表的节点其中<code>value[]</code>用来储存节点中储存的数<code>next[]</code>表示紧挨着这个节点的下一个节点是什么</li>
+<li>变量cnt，没有实际意义，仅来创建节点</li>
+<li>变量head，表示整个链表中第一个结点哪一个</li>
+<li>插入的时候，首先要创建节点，让<code>cnt</code>加<code>1</code>，<code>val[cnt]</code>和<code>nxt[cnt]</code>就表示新建的节点给<code>val[cnt]</code>赋值为想要插入的数</li>
+<li><p>然后找到要插入的位置，假设要在结点<code>x</code>和节点<code>y</code>的中间插入，则依次让<code>nxt[x] = cnt</code>，<code>nxt[cnt] = y</code></p>
+</li>
+<li><p>如果要删除某个节点，找到这个节点以及上一个节点的位置。假设这个节点为<code>x</code>，上一个节点为<code>y</code>，那只需要让<code>nxt[y] = nxt[x]</code>即可</p>
+</li>
+<li>如何寻找要找的结点？</li>
+<li>从头开始一个一个往后找</li>
+<li>因此某个节点的上一个节点也可以在找这个节点的过程中找到</li>
+<li>如果把头结点删了记得把头更新为头的下一个</li>
+</ul>
+<h3><span id="链表的简单实现">链表的简单实现</span></h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    Node *pre, *nxt;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ins</span><span class="params">(Node *x, Node *y)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// x -&gt; y</span></span><br><span class="line">    <span class="keyword">if</span> (x-&gt;nxt != <span class="literal">NULL</span>) y-&gt;nxt = x-&gt;nxt, y-&gt;nxt-&gt;pre = y;</span><br><span class="line">    x-&gt;nxt = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">(Node *x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x-&gt;pre != <span class="literal">NULL</span>) x-&gt;pre-&gt;nxt = nxt;</span><br><span class="line">    <span class="keyword">if</span> (x-&gt;nxt != <span class="literal">NULL</span>) x-&gt;nxt-&gt;pre = pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="链表的一些常见应用">链表的一些常见应用</span></h3><ul>
+<li><p>存图（也被称作链式向前型）</p>
+</li>
+<li><p>块状链表</p>
+<p>数组：$\Theta\left(1\right)$查询，$\Theta\left(n\right)$插入；</p>
+<p>链表：$\Theta\left(n\right)$查询，$\Theta\left(1\right)$插入；</p>
+<p><img src="images/kuaizhuanglianbiao-172191081273312.png" alt="./images/kuaizhuanglianbiao.png"></p>
+</li>
+</ul>
+<p>不难发现块状链表就是一个链表，每个节点指向一个数组。 我们把原来长度为 n 的数组分为 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="\sqrt{n}"> 个节点，每个节点对应的数组大小为 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="\sqrt{n}">。 所以我们这么定义结构体，代码见下。 其中 <code>sqn</code> 表示 <code>sqrt(n)</code> 即 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="\sqrt{n}">，<code>pb</code> 表示 <code>push_back</code>，即在这个 <code>node</code> 中加入一个元素。</p>
+<h2><span id="栈">栈</span></h2><h3><span id="感性理解一下栈">感性理解一下栈</span></h3><ul>
+<li>薯片桶大家应该见过；</li>
+<li>只能从开口一端的最上面去薯片，要把薯片放进去也只能在开口一端的最上面；</li>
+<li><img src="images/stack.svg" alt="img"></li>
+<li>这就是一个栈；</li>
+<li>换而言之，栈是一种特殊的线性表，只能在一端插入/删除</li>
+</ul>
+<h3><span id="这样的一些实现概念">这样的一些实现概念</span></h3><ul>
+<li>最上面的元素被称为<font color="red">栈顶</font></li>
+<li>把一个元素放到栈的最上面称为<font color="red">压入（push）</font></li>
+<li>把栈顶从栈中除掉被称为<font color="red">弹出（pop）</font></li>
+<li>被弹出栈的数据总是栈中所有数据中最后进来的那个这种储存方式叫做<font color="red">先进后出</font></li>
+</ul>
+<h3><span id="如何实现栈">如何实现栈</span></h3><ul>
+<li><p>一般用数组模拟。</p>
+</li>
+<li><p>```cpp</p>
+<h1><span id="include">include <cstdio></cstdio></span></h1><p>struct stack{</p>
+<pre><code>int a[100010];
+int tot;
+void init()&#123;
+    tot = 0;
+&#125;
+void push(int x) &#123;
+    a[++tot] = x;
+&#125;
+void pop() &#123;
+    --tot;
+&#125;
+int size() &#123;
+    return tot;
+&#125;
+int top() &#123;
+    return a[top];
+&#125;
+</code></pre><p>};<br>int main(){</p>
+<pre><code>return 0;
+</code></pre><p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 栈的用处</span><br><span class="line"></span><br><span class="line">- 实现深度优先搜索</span><br><span class="line">- 单调栈优化DP等</span><br><span class="line">- 有一些经典算法是用栈的</span><br><span class="line"></span><br><span class="line">## 队列</span><br><span class="line"></span><br><span class="line">- 队列这名字够形象了就如同生活中的排队</span><br><span class="line">- 队列支持两种操作</span><br><span class="line">  - &lt;font color = &quot;red&quot;&gt;入队&lt;/font&gt;：在队列最后端加入一个数</span><br><span class="line">  - &lt;font color = &quot;red&quot;&gt;出队&lt;/font&gt;：把队列最前端的树移出队列</span><br><span class="line">- ![img](images/queue.svg)</span><br><span class="line">- 队列最前端叫做队头，最后端叫做队尾</span><br><span class="line">- 被移除队列的树总是队列中最早进来的那个，这种存储的方式叫做&lt;font color = &quot;red&quot;&gt;先进先出&lt;/font&gt;。</span><br><span class="line"></span><br><span class="line">### 队列的一些基本概念</span><br><span class="line"></span><br><span class="line">- 数组`q[]`，这是队列的本体</span><br><span class="line">- `l`，`r`，分别表示队头的下标和队尾的下标</span><br><span class="line">- 入队和栈一样，若要加入数`x`，让`r`加`1`，然后给赋值为`x`即可</span><br><span class="line">- 出队时只需让`l`加`1`</span><br><span class="line">- 通过把队列后边界前移来达到移除队尾的目的</span><br><span class="line"></span><br><span class="line">### 实现</span><br><span class="line"></span><br><span class="line">```cpp</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">struct queue&#123;</span><br><span class="line">	int q[100010];</span><br><span class="line">	int l, r;</span><br><span class="line">	void init()&#123;</span><br><span class="line">		l = 0;</span><br><span class="line">         r = 0;</span><br><span class="line">	&#125;</span><br><span class="line">	void push(int x) &#123;</span><br><span class="line">		/*</span><br><span class="line">		if (r == 1000000) r = 1;</span><br><span class="line">		else ++r;</span><br><span class="line">		*/</span><br><span class="line">        q[r] = x</span><br><span class="line">	&#125;</span><br><span class="line">	void pop() &#123;</span><br><span class="line">        /*</span><br><span class="line">		if (l == 1000000) l = 1;</span><br><span class="line">		else ++l;</span><br><span class="line">		*/</span><br><span class="line">         ++l;</span><br><span class="line">	&#125;</span><br><span class="line">	int size() &#123;</span><br><span class="line">        if (l &lt; r) return r - l;</span><br><span class="line">        return l - r + 1;</span><br><span class="line">	&#125;</span><br><span class="line">	int front() &#123;</span><br><span class="line">		return q[l];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3><span id="循环队列">循环队列</span></h3><ul>
+<li>如果每次入队出队都往后增的话，就会出现队列“假溢”的情况</li>
+<li>我们可以尝试着把队列的最后面，接到最前面称为循环队列。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">queue</span>&#123;</span><br><span class="line">	<span class="type">int</span> q[<span class="number">100010</span>];</span><br><span class="line">	<span class="type">int</span> l, r;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">		l = <span class="number">0</span>;</span><br><span class="line">         r = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (r == <span class="number">1000000</span>) r = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> ++r;</span><br><span class="line">        q[r] = x</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">void</span> <span class="built_in">pop</span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> (l == <span class="number">1000000</span>) l = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> ++l;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) <span class="keyword">return</span> r - l;</span><br><span class="line">        <span class="keyword">return</span> l - r + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> q[l];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="单调队列">单调队列</span></h3><ul>
+<li><p>看下面一个例题：</p>
+<p>给定一个长度为$n$的序列，求所有区间长度为$m$的区间的最大值和最小值。</p>
+<p>$n, m \le 5\times 10^6$</p>
+</li>
+<li><p>这道题有啥做法？</p>
+<ol>
+<li>$\Theta \left(n \log n \right)$的线段树；</li>
+<li>$\Theta \left(n \log n \right)$的带删除优先队列（堆、左偏树、 STL…）；</li>
+<li>$\Theta \left(n\right)$-$\Theta \left(1\right)$RMQ代替线段树；</li>
+<li>$\Theta \left(n \right)$的滑动窗口；</li>
+</ol>
+</li>
+<li><p>在队列中维护一个单调性，换而言之，让这个队列保持里面的元素拥有单调递增/单调递减的属性；</p>
+</li>
+<li><p>也就是说，维护这几个元素的最大值/最小值即可；</p>
+</li>
+<li><p>考虑到每个元素最多被进出对一次，因此这是一个$\Theta \left(n \right)$的算法；</p>
+</li>
+</ul>
+<h2><span id="前缀和">前缀和</span></h2><ul>
+<li><p>给定一个序列；</p>
+</li>
+<li><p>定义$p_i$为前$i$个数的和；</p>
+</li>
+<li><p>$p<em>i = p</em>{i - 1} + a_i$</p>
+</li>
+<li><p>最简单的应用：</p>
+<p>查询区间$\left[l,r\right]$的和；</p>
+<p>$ans = p<em>r - p</em>{l - 1}$；</p>
+</li>
+<li><p>前缀和还可以用来拓展为有逆运算的运算；</p>
+</li>
+</ul>
+<h2><span id="并查集">并查集</span></h2><ul>
+<li>并查集是一类问题的总称，不过在使用中大部分人都会使用树形的结构实现并查集；</li>
+<li>并查集的基本问题：用于处理一些不相交集合的合并及查询问题；</li>
+<li>有两个基本操作：<ul>
+<li>Find：确定元素属于哪一个子集，它可以被用来确定两个元素是否属于同一个子集；</li>
+<li>Union：将两个子集合并成同一个集合；</li>
+</ul>
+</li>
+<li>先考虑如何查询一个元素属于哪个集合：<ul>
+<li>我们假设每一个集合都是一个树的形态，那么这棵树的树根就是这个集合的代表元；</li>
+<li>一路往上爬找到树根即可；</li>
+<li><img src="images/disjoint-set-find.svg" alt="img"></li>
+</ul>
+</li>
+<li><p>在考虑如何合并两个集合；</p>
+<ul>
+<li>把一个集合的树根挂到另一个集合的根节点底下当儿子就好了；</li>
+<li><img src="images/disjoint-set-merge.svg" alt="img"></li>
+</ul>
+</li>
+<li><p>我们发现这样做可能效率并不是太高，因为在最坏情况下查询可能要趴完所有节点，复杂度是单次$\Theta\left(n\right)$的；</p>
+</li>
+<li><p>如果这个数值有两层那么查询的效率必然极高；</p>
+</li>
+<li><p>这就是并查集的第一个优化：路径压缩；</p>
+<ul>
+<li><p><img src="images/disjoint-set-compress.svg" alt="img"></p>
+</li>
+<li><p>板子：</p>
+<blockquote>
+<h4><span id="模板并查集">【模板】并查集</span></h4><h5><span id="题目描述">题目描述</span></h5><p>如题，现在有一个并查集，你需要完成合并和查询操作。</p>
+<h5><span id="输入格式">输入格式</span></h5><p>第一行包含两个整数 $N,M$ ,表示共有 $N$ 个元素和 $M$ 个操作。</p>
+<p>接下来 $M$ 行，每行包含三个整数 $Z_i,X_i,Y_i$ 。</p>
+<p>当 $Z_i=1$ 时，将 $X_i$ 与 $Y_i$ 所在的集合合并。</p>
+<p>当 $Z_i=2$ 时，输出 $X_i$ 与 $Y_i$ 是否在同一集合内，是的输出<br><code>Y</code> ；否则输出 <code>N</code> 。</p>
+<h5><span id="输出格式">输出格式</span></h5><p>对于每一个 $Z_i=2$ 的操作，都有一行输出，每行包含一个大写字母，为 <code>Y</code> 或者 <code>N</code> 。</p>
+<h5><span id="样例-1">样例 #1</span></h5><h6><span id="样例输入-1">样例输入 #1</span></h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 7</span><br><span class="line">2 1 2</span><br><span class="line">1 1 2</span><br><span class="line">2 1 2</span><br><span class="line">1 3 4</span><br><span class="line">2 1 4</span><br><span class="line">1 2 3</span><br><span class="line">2 1 4</span><br></pre></td></tr></table></figure>
+<h6><span id="样例输出-1">样例输出 #1</span></h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">N</span><br><span class="line">Y</span><br><span class="line">N</span><br><span class="line">Y</span><br></pre></td></tr></table></figure>
+<h5><span id="提示">提示</span></h5><p>对于 $30\%$ 的数据，$N \le 10$，$M \le 20$。</p>
+<p>对于 $70\%$ 的数据，$N \le 100$，$M \le 10^3$。</p>
+<p>对于 $100\%$ 的数据，$1\le N \le 10^4$，$1\le M \le 2\times 10^5$，$1 \le X_i, Y_i \le N$，$Z_i \in { 1, 2 }$。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> fa[N], n, m;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span> <span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[x] != x) &#123;</span><br><span class="line">		fa[x] = <span class="built_in">find</span>(fa[x]);</span><br><span class="line">		<span class="keyword">return</span> fa[x];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> xx = <span class="built_in">find</span>(x), yy = <span class="built_in">find</span>(y);</span><br><span class="line">	fa[yy] = xx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">	<span class="type">char</span> ch;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		ch = <span class="built_in">getchar</span>();</span><br><span class="line">		<span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">	&#125; <span class="keyword">while</span> (ch &lt; <span class="string">&#x27;0&#x27;</span> || ch &gt; <span class="string">&#x27;9&#x27;</span>);</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		x = x * <span class="number">10</span> + ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		ch = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;<span class="keyword">while</span> (ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>);</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	n = <span class="built_in">read</span>();</span><br><span class="line">	m = <span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) fa[i] = i;</span><br><span class="line">	<span class="keyword">while</span> (m--) &#123;</span><br><span class="line">		<span class="type">int</span> opt = <span class="built_in">read</span>();</span><br><span class="line">		<span class="type">int</span> x = <span class="built_in">read</span>();</span><br><span class="line">		<span class="type">int</span> y = <span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">if</span> (opt == <span class="number">1</span>) <span class="built_in">merge</span>(x, y);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="type">int</span> xx = <span class="built_in">find</span>(x);</span><br><span class="line">			<span class="type">int</span> yy = <span class="built_in">find</span>(y);</span><br><span class="line">			<span class="keyword">if</span> (xx == yy) <span class="built_in">printf</span> (<span class="string">&quot;y&quot;</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;N&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>第二种合并被称为启发式合并，启发式合并的思想在数据结构中有广泛的应用；</p>
+<ul>
+<li>我们发现，如果我们每次把高的树并到矮的树上，那么会造成同样的效率浪费；</li>
+<li>所以我们同时记录每个集合的树高，将矮的并到高的去就好了；</li>
+<li>当然有一个更方便的做法，是记录每个集合的大小每次将小的集合变到大的集合，复杂度同样；</li>
+</ul>
+</li>
+</ul>
+<h3><span id="并查集的时间复杂度">并查集的时间复杂度</span></h3><p>使用路径压缩：$\Theta\left(\log n\right)$</p>
+<h2><span id="优先队列">优先队列</span></h2><ul>
+<li><p>什么是优先队列呢？</p>
+</li>
+<li><p>就是在弹出的时候，不是按照进入时间，而是按照另一种给定的优先级弹出；</p>
+</li>
+<li><p>其实可以认为普通队列是规定了时间最小为优先级的优先队列；</p>
+</li>
+<li><p>有很多种实现优先队列的方式，最常见的就是堆；</p>
+</li>
+<li><p>```cpp</p>
+<h1><span id="include">include <cstdio></cstdio></span></h1><h1><span id="include">include <queue></queue></span></h1><p>using namespace std;<br>priority_queue<type> name;</type></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- 优先队列初始默认是权值大优先级高；</span><br><span class="line"></span><br><span class="line">- 声明权值小优先级高：</span><br><span class="line"></span><br><span class="line">  ```cpp</span><br><span class="line">  priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt; q;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3><span id="一个简单的小例题">一个简单的小例题</span></h3><ul>
+<li><p>合并果子；</p>
+<blockquote>
+<h4><span id="noip2004-提高组-合并果子-usaco06nov-fence-repair-g">[NOIP2004 提高组] 合并果子 / [USACO06NOV] Fence Repair G</span></h4><h5><span id="题目描述">题目描述</span></h5><p>在一个果园里，多多已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。多多决定把所有的果子合成一堆。</p>
+<p>每一次合并，多多可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。可以看出，所有的果子经过 $n-1$ 次合并之后， 就只剩下一堆了。多多在合并果子时总共消耗的体力等于每次合并所耗体力之和。</p>
+<p>因为还要花大力气把这些果子搬回家，所以多多在合并果子时要尽可能地节省体力。假定每个果子重量都为 $1$ ，并且已知果子的种类 数和每种果子的数目，你的任务是设计出合并的次序方案，使多多耗费的体力最少，并输出这个最小的体力耗费值。</p>
+<p>例如有 $3$ 种果子，数目依次为 $1$ ， $2$ ， $9$ 。可以先将 $1$ 、 $2$ 堆合并，新堆数目为 $3$ ，耗费体力为 $3$ 。接着，将新堆与原先的第三堆合并，又得到新的堆，数目为 $12$ ，耗费体力为 $12$ 。所以多多总共耗费体力 $=3+12=15$ 。可以证明 $15$ 为最小的体力耗费值。</p>
+<h5><span id="输入格式">输入格式</span></h5><p>共两行。<br>第一行是一个整数 $n(1\leq n\leq 10000)$ ，表示果子的种类数。  </p>
+<p>第二行包含 $n$ 个整数，用空格分隔，第 $i$ 个整数 $a_i(1\leq a_i\leq 20000)$ 是第 $i$ 种果子的数目。</p>
+<h5><span id="输出格式">输出格式</span></h5><p>一个整数，也就是最小的体力耗费值。输入数据保证这个值小于 $2^{31}$ 。</p>
+<h5><span id="样例-1">样例 #1</span></h5><h6><span id="样例输入-1">样例输入 #1</span></h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3 </span><br><span class="line">1 2 9</span><br></pre></td></tr></table></figure>
+<h5><span id="样例输出-1">样例输出 #1</span></h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure>
+<h6><span id="提示">提示</span></h6><p>对于 $30\%$ 的数据，保证有 $n \le 1000$：</p>
+<p>对于 $50\%$ 的数据，保证有 $n \le 5000$；</p>
+<p>对于全部的数据，保证有 $n \le 10000$。</p>
+</blockquote>
+</li>
+<li><p>每次选择当前最小的两队合并起来就好了；</p>
+<ul>
+<li>code</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, x, ans;</span><br><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt; &gt;q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">        q.<span class="built_in">push</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>() &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="type">int</span> a = q.<span class="built_in">top</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> b = q.<span class="built_in">top</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        ans += a + b;</span><br><span class="line">        q.<span class="built_in">push</span>(a + b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>OI</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024年8月鸡汤</title>
+    <url>/2024/08/24/2024%E5%B9%B48%E6%9C%88%E9%B8%A1%E6%B1%A4/</url>
+    <content><![CDATA[<h1><span id="2024年8月鸡汤">2024年8月鸡汤</span></h1><blockquote>
+<p>每天一碗鲜鸡汤有益于身体健康</p>
+<p>​        ——鲁迅</p>
+</blockquote>
+<p>（鲁迅：我没说过）</p>
+<p>$1^{365}=1$</p>
+<p>$1.01^{365}=37.8$</p>
+<p>$0.99^{365}=0.03$</p>
+]]></content>
+      <tags>
+        <tag>Soup</tag>
       </tags>
   </entry>
 </search>
