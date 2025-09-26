@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <title>My Own Space</title>
     <style>
-        body
-        {
-            background-image:url('bg.jpg');
-            background-repeat:no-repeat;
+        body {
+            background-image: url('bg.jpg');
+            background-repeat: no-repeat;
         }
     </style>
 
 </head>
+
 <body style="font-family: '等线', 'Microsoft YaHei UI', '微软雅黑', 'SimSun', '宋体', sans-serif;">
     <span id="time_part" style="font-size:48px;color:#ffffff">
         <div id="time">
             <span id="hours"></span>
-            <span>:</span>
-            <span id="minutes"></span>
-            <span>:</span>
-            <span id="seconds"></span>
-        </div>
+    <span>:</span>
+    <span id="minutes"></span>
+    <span>:</span>
+    <span id="seconds"></span>
+    </div>
     </span>
 
     <span id="date_part" style="font-size:36px;color:#ffffff">
         <div id="date">
             <span id="year"></span>
-            <span>年</span>
-            <span id="month"></span>
-            <span>月</span>
-            <span id="day"></span>
-            <span>日</span>
-        </div>
+    <span>年</span>
+    <span id="month"></span>
+    <span>月</span>
+    <span id="day"></span>
+    <span>日</span>
+    </div>
     </span>
 
     <span id="main" style="font-size:36px;color:#ffffff">
         <br>
 
-        <a href = "./time.html" id="time_is_link" style="font-size:36px;color:#ffffff">专注的时间</a>
+        <a href="./time.html" id="time" style="font-size:36px;color:#ffffff">专注的时间</a>
+        <br>
+        <a href="./locker.html" id="locker" style="font-size:36px;color:#ffffff">储物柜</a>
     </span>
     <script>
         // 添加格式化函数，确保数字为两位数
@@ -73,4 +76,5 @@
         setInterval(updateClock, 1000);
     </script>
 </body>
+
 </html>
