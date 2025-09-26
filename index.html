@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>My Own Space</title>
+    <style>
+        body
+        {
+            background-image:url('bg.png');
+            background-repeat:no-repeat;
+        }
+    </style>
+
+</head>
+<body style="font-family: '等线', 'Microsoft YaHei UI', '微软雅黑', 'SimSun', '宋体', sans-serif;">
+    <span id="time_part" style="font-size:48px;color:#ffffff">
+        <div id="time">
+            <span id="hours"></span>
+            <span>:</span>
+            <span id="minutes"></span>
+            <span>:</span>
+            <span id="seconds"></span>
+        </div>
+    </span>
+
+    <span id="date_part" style="font-size:36px;color:#ffffff">
+        <div id="date">
+            <span id="year"></span>
+            <span>年</span>
+            <span id="month"></span>
+            <span>月</span>
+            <span id="day"></span>
+            <span>日</span>
+        </div>
+    </span>
+
+    <span id="main" style="font-size:36px;color:#ffffff">
+        <br>
+
+        <a href = "./time.html" id="time_is_link" style="font-size:36px;color:#ffffff">专注的时间</a>
+    </span>
+    <script>
+        // 添加格式化函数，确保数字为两位数
+        function formatTwoDigits(num) {
+            return num < 10 ? '0' + num : num;
+        }
+
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var day = now.getDate();
+            var month = now.getMonth() + 1;
+            var year = now.getFullYear();
+
+            // 12 小时制显示时间（如需使用可取消注释）
+            // var ampm = hours >= 12 ? 'PM' : 'AM';
+            // hours = hours % 12 || 12;
+
+            // 使用格式化函数更新时钟显示
+            document.getElementById("hours").innerHTML = formatTwoDigits(hours);
+            document.getElementById("minutes").innerHTML = formatTwoDigits(minutes);
+            document.getElementById("seconds").innerHTML = formatTwoDigits(seconds);
+            document.getElementById("day").innerHTML = formatTwoDigits(day);
+            document.getElementById("month").innerHTML = formatTwoDigits(month);
+            document.getElementById("year").innerHTML = year;
+        }
+
+        // 初始化显示
+        updateClock();
+        // 每秒更新一次
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
