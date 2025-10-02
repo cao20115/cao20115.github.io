@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>body{font-family:sans-serif;padding:2em;}</style>
+</head>
+<body style="font-family: '等线', 'Microsoft YaHei UI', '微软雅黑', 'SimSun', '宋体', sans-serif;">
+<h1>2025年仍访问 Github 不畅？</h1><hr>
+<p><a href="../blog_list.html" target="_blank" rel="noopener noreferrer">返回文章列表</a></p>
+<p>本文介绍三种解决方案，分别为</p>
+<ol>
+<li>寻找镜像站</li>
+<li>使用代理</li>
+<li>通过浏览器启动参数绕过SNI阻断</li>
+<li>使用第三方 Github 加速工具</li>
+</ol>
+<h1># 1. 寻找镜像站</h1><hr>
+<p>不多说，搜索引擎一搜一大把</p>
+<h1># 2. 使用代理</h1><hr>
+<p>懂得都懂，不多说</p>
+<h1># 3. 通过浏览器启动参数绕过SNI阻断</h1><hr>
+<p>这个好办，在Chromium浏览器快捷方式的地址栏加入参数</p>
+<pre><code class="language-">--host-rules="MAP *github.com CYFM0," --host-resolver-rules="MAP CYFM0 20.200.245.247," --test-type --ignore-certificate-errors "https://github.com"
+
+</code></pre>
+<p>原理很简单，将Github.com映射为另一域名(在对Edge应用时应先将其kill)</p>
+<p>或使用如下脚本：</p>
+<pre><code class="language-cmd">@taskkill /im msedge.exe /f
+
+@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --host-rules="MAP *github.com CYFM0," --host-resolver-rules="MAP CYFM0 20.200.245.247," --test-type --ignore-certificate-errors "https://github.com"
+
+@taskkill /im msedge.exe /f
+</code></pre>
+<h1># 使用第三方 Github 加速工具</h1><hr>
+<p>比如FastGithub</p>
+<p>比较难找，在此不多说。</p>
+</body>
+</html>
