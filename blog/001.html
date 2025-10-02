@@ -1,43 +1,161 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
-<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<style>body{font-family:sans-serif;padding:2em;}</style>
-</head>
-<body style="font-family: '等线', 'Microsoft YaHei UI', '微软雅黑', 'SimSun', '宋体', sans-serif;">
-<h1>2025年仍访问 Github 不畅？</h1><hr>
-<p><a href="../blog_list.html" target="_blank" rel="noopener noreferrer">返回文章列表</a></p>
-<p>本文介绍三种解决方案，分别为</p>
-<ol>
-<li>寻找镜像站</li>
-<li>使用代理</li>
-<li>通过浏览器启动参数绕过SNI阻断</li>
-<li>使用第三方 Github 加速工具</li>
-</ol>
-<h1># 1. 寻找镜像站</h1><hr>
-<p>不多说，搜索引擎一搜一大把</p>
-<h1># 2. 使用代理</h1><hr>
-<p>懂得都懂，不多说</p>
-<h1># 3. 通过浏览器启动参数绕过SNI阻断</h1><hr>
-<p>这个好办，在Chromium浏览器快捷方式的地址栏加入参数</p>
-<pre><code class="language-">--host-rules="MAP *github.com CYFM0," --host-resolver-rules="MAP CYFM0 20.200.245.247," --test-type --ignore-certificate-errors "https://github.com"
 
-</code></pre>
-<p>原理很简单，将Github.com映射为另一域名(在对Edge应用时应先将其kill)</p>
-<p>或使用如下脚本：</p>
-<pre><code class="language-cmd">@taskkill /im msedge.exe /f
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: '等线', 'Microsoft YaHei UI', '微软雅黑', 'SimSun', '宋体', sans-serif;
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.10);
+            padding: 40px 32px 32px 32px;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            color: #2d3a4b;
+            margin-top: 0.5em;
+            margin-bottom: 0.2em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #e0e7ef;
+            margin: 1.5em 0 1.5em 0;
+        }
+        
+        a,
+        a:visited {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #1e40af;
+            text-decoration: underline;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff !important;
+            border-radius: 6px;
+            padding: 8px 20px;
+            font-size: 1em;
+            margin-bottom: 1em;
+            transition: background 0.2s;
+        }
+        
+        .btn:hover {
+            background: #1e40af;
+        }
+        
+        ol,
+        ul {
+            padding-left: 2em;
+            margin-bottom: 1.2em;
+        }
+        
+        pre {
+            background: #23272e;
+            color: #f8fafc;
+            border-radius: 8px;
+            padding: 1em 1.2em;
+            overflow-x: auto;
+            font-size: 1em;
+            margin-bottom: 1.5em;
+        }
+        
+        code {
+            background: #f3f4f6;
+            color: #d6336c;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.98em;
+        }
+        
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        
+        blockquote {
+            border-left: 4px solid #2563eb;
+            background: #f1f5fb;
+            color: #374151;
+            margin: 1.2em 0;
+            padding: 0.8em 1.2em;
+            border-radius: 6px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 16px 4vw 16px 4vw;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+
+<body style="font-family: '等线', 'Microsoft YaHei UI', '微软雅黑', 'SimSun', '宋体', sans-serif;">
+    <div class="container">
+        <h1>2025年仍访问 Github 不畅？</h1>
+        <hr>
+        <a href="../blog_list.html" class="btn">返回文章列表</a>
+        <p>本文介绍三种解决方案，分别为</p>
+        <ol>
+            <li>寻找镜像站</li>
+            <li>使用代理</li>
+            <li>通过浏览器启动参数绕过SNI阻断</li>
+            <li>使用第三方 Github 加速工具</li>
+        </ol>
+        <h1>1. 寻找镜像站</h1>
+        <hr>
+        <p>不多说，搜索引擎一搜一大把</p>
+        <h1>2. 使用代理</h1>
+        <hr>
+        <p>懂得都懂，不多说</p>
+        <h1>3. 通过浏览器启动参数绕过SNI阻断</h1>
+        <hr>
+        <p>这个好办，在Chromium浏览器快捷方式的地址栏加入参数</p>
+        <pre><code class="language-bash">--host-rules="MAP *github.com CYFM0," --host-resolver-rules="MAP CYFM0 20.200.245.247," --test-type --ignore-certificate-errors "https://github.com"
+        </code></pre>
+        <p>原理很简单，将Github.com映射为另一域名(在对Edge应用时应先将其kill)</p>
+        <p>或使用如下脚本：</p>
+        <pre><code class="language-cmd">@taskkill /im msedge.exe /f
 
 @"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --host-rules="MAP *github.com CYFM0," --host-resolver-rules="MAP CYFM0 20.200.245.247," --test-type --ignore-certificate-errors "https://github.com"
 
 @taskkill /im msedge.exe /f
-</code></pre>
-<h1># 使用第三方 Github 加速工具</h1><hr>
-<p>比如FastGithub</p>
-<p>比较难找，在此不多说。</p>
+        </code></pre>
+        <h1>使用第三方 Github 加速工具</h1>
+        <hr>
+        <p>比如FastGithub</p>
+        <p>比较难找，在此不多说。</p>
+    </div>
 </body>
+
 </html>
