@@ -68,13 +68,15 @@ std::string markdownToHtml(const std::string& markdown) {
             continue;
         }
         // 标题
-        if (std::regex_match(line, match, std::regex(R"(^\s*#\s*(.*))"))) {
-            oss << "<h1>" << match[1] << "</h1><hr>\n";
+        if (std::regex_match(line, match, std::regex(R"(^\s*###\s*(.*))"))) {
+            oss << "<h3>" << match[1] << "</h3><hr>\n";
         } else if (std::regex_match(line, match, std::regex(R"(^\s*##\s*(.*))"))) {
             oss << "<h2>" << match[1] << "</h2><hr>\n";
-        } else if (std::regex_match(line, match, std::regex(R"(^\s*###\s*(.*))"))) {
-            oss << "<h3>" << match[1] << "</h3><hr>\n";
-        } else {
+        } else if (std::regex_match(line, match, std::regex(R"(^\s*#\s*(.*))"))) {
+            oss << "<h1>" << match[1] << "</h1><hr>\n";
+        }
+        else
+        {
             // LaTeX 块公式 $$...$$
             if (std::regex_match(line, match, std::regex(R"(^\s*\$\$(.*)\$\$\s*$)"))) {
                 oss << "<div class=\"math\">$$" << match[1] << "$$</div>\n";
