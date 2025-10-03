@@ -240,7 +240,7 @@ int main(int argc, char* argv[]) {
         << "        }  \n"
         << "          \n"
         << "        blockquote {  \n"
-        << "            border-left: 4px solid #2563eb;  \n"
+        << "            border-left: 4px solid #0c1f47;  \n"
         << "            background: #f1f5fb;  \n"
         << "            color: #374151;  \n"
         << "            margin: 1.2em 0;  \n"

@@ -121,12 +121,21 @@
 </head>  
 <body style="font-family: '等线', 'Microsoft YaHei UI', '微软雅黑', 'SimSun', '宋体', sans-serif;">
 <div class="container">
-<h1>文章列表</h1><hr>
-<p><a href="./index.html" target="_blank" rel="noopener noreferrer">返回首页</a></p>
-<ul>
-<li><a href="./blog/001.html" id="001" style="color:#000000">2025年如何快速访问Github</a></li>
-<li><a href="./blog/002.html" id="002" style="color:#000000">2025年如何访问Wikipedia而不使用代理</a></li>
-</ul>
+<h1>2025年如何访问Wikipedia而不使用代理</h1><hr>
+<h1># 浏览器访问</h1><hr>
+<p>与 <a href="./001.html" id="001" style="color:#000000">2025年如何快速访问Github</a> 同理，在Chromium内核浏览器快捷方式地址栏加入如下参数：</p>
+<pre><code class="language-">--host-rules="MAP *wikipedia.org CYFM0,MAP  CYFM0,MAP  CYFM0," --host-resolver-rules="MAP CYFM0 185.15.59.224," --test-type --ignore-certificate-errors 
+
+</code></pre>
+<p>将 <i>wikidata.org、</i>wikimedia.org 映射到其他域名，以绕过SNI阻断</p>
+<p>或使用如下脚本：</p>
+<pre><code class="language-cmd">@taskkill /im msedge.exe /f
+
+@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --host-rules="MAP *wikipedia.org CYFM0,MAP *wikimedia.org CYFM0,MAP *wikidata.org CYFM0," --host-resolver-rules="MAP CYFM0 185.15.59.224," --test-type --ignore-certificate-errors "https://zh.wikipedia.org/"
+
+@taskkill /im msedge.exe /f
+</code></pre>
+<p>推荐阅读：<a href="./001.html" id="001" style="color:#000000">2025年如何快速访问Github</a></p>
 <div>
 </body>
 </html>
