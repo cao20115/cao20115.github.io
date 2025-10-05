@@ -123,33 +123,7 @@
 <div class="container">
 <h1>2025年仍访问 Github 不畅？</h1><hr>
 <p><a href="../blog_list.html" target="_blank" rel="noopener noreferrer">返回文章列表</a></p>
-<p>本文介绍三种解决方案，分别为</p>
-<ol>
-<li>寻找镜像站</li>
-<li>使用代理</li>
-<li>通过浏览器启动参数绕过SNI阻断</li>
-<li>使用第三方 Github 加速工具</li>
-</ol>
-<h2>1. 寻找镜像站</h2><hr>
-<p>不多说，搜索引擎一搜一大把</p>
-<h2>2. 使用代理</h2><hr>
-<p>懂得都懂，不多说</p>
-<h2>3. 通过浏览器启动参数绕过SNI阻断</h2><hr>
-<p>这个好办，在Chromium浏览器快捷方式的地址栏加入参数</p>
-<pre><code class="language-">--host-rules="MAP *github.com CYFM0," --host-resolver-rules="MAP CYFM0 20.200.245.247," --test-type --ignore-certificate-errors "https://github.com"
-
-</code></pre>
-<p>原理很简单，将Github.com映射为另一域名(在对Edge应用时应先将其kill)</p>
-<p>或使用如下脚本：</p>
-<pre><code class="language-cmd">@taskkill /im msedge.exe /f
-
-@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --host-rules="MAP *github.com CYFM0," --host-resolver-rules="MAP CYFM0 20.200.245.247," --test-type --ignore-certificate-errors "https://github.com"
-
-@taskkill /im msedge.exe /f
-</code></pre>
-<h2>使用第三方 Github 加速工具</h2><hr>
-<p>比如FastGithub</p>
-<p>比较难找，在此不多说。</p>
+<p>本文什么都没介绍</p>
 <div>
 </body>
 </html>
